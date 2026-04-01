@@ -2,7 +2,7 @@ class Agenticos < Formula
   desc "AI-native project management MCP server for Claude Code, Codex, Cursor, and Gemini CLI"
   homepage "https://github.com/madlouse/AgenticOS"
   url "https://github.com/madlouse/AgenticOS/releases/download/v0.3.0/agenticos-mcp.tgz"
-  sha256 "54c755ec2150ea4e5217eec2dcba6cd96c2e8ed2352a4eb6439ec458e182f64b"
+  sha256 "81b91c25ea1a338169a0b8593d7cca757e239a74343f0e915e3b3e8e3e39a4e3"
   license "MIT"
   version "0.3.0"
 

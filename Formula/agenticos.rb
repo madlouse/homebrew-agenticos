@@ -1,3 +1,5 @@
+require "language/node"
+
 class Agenticos < Formula
   desc "AI-native project management MCP server for Claude Code, Codex, Cursor, and Gemini CLI"
   homepage "https://github.com/madlouse/AgenticOS"

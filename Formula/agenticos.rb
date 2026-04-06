@@ -3,10 +3,10 @@ require "language/node"
 class Agenticos < Formula
   desc "AI-native project management MCP server for Claude Code, Codex, Cursor, and Gemini CLI"
   homepage "https://github.com/madlouse/AgenticOS"
-  url "https://github.com/madlouse/AgenticOS/releases/download/v0.3.0/agenticos-mcp.tgz"
-  sha256 "81b91c25ea1a338169a0b8593d7cca757e239a74343f0e915e3b3e8e3e39a4e3"
+  url "https://github.com/madlouse/AgenticOS/releases/download/v0.4.0/agenticos-mcp.tgz"
+  sha256 "5f049ba880f2de6d930d9ada07ae1ee549dba165e9bf2b30f6e6fe5a168096f7"
   license "MIT"
-  version "0.3.0"
+  version "0.4.0"
 
   depends_on "node"
 
@@ -24,7 +24,10 @@ class Agenticos < Formula
     ohai "Add the following to your shell profile (~/.zshrc or ~/.bashrc):"
     ohai "  export AGENTICOS_HOME=\"#{var}/agenticos\""
     ohai ""
-    ohai "Then bootstrap your agent (see caveats below) and restart the tool."
+    ohai "Then run: agenticos-bootstrap --workspace \"#{var}/agenticos\" --first-run"
+    ohai "On macOS, first-run mode also enables launchctl persistence for GUI/session inheritance."
+    ohai "To audit the current bootstrap state without changes, use: agenticos-bootstrap --verify"
+    ohai "Or bootstrap your agent manually (see caveats below) and restart the tool."
   end
 
   def caveats
@@ -42,24 +45,33 @@ class Agenticos < Formula
 
       2. Bootstrap one officially supported agent:
 
+         Recommended helper
+           agenticos-bootstrap --workspace "#{var}/agenticos" --first-run
+
+         macOS GUI/session helper
+           agenticos-bootstrap --workspace "#{var}/agenticos" --persist-shell-env --persist-launchctl-env --apply
+
          Claude Code
-           claude mcp add --transport stdio --scope user agenticos -- agenticos-mcp
+           claude mcp add --transport stdio --scope user -e AGENTICOS_HOME="$AGENTICOS_HOME" agenticos -- agenticos-mcp
 
          Codex
-           codex mcp add agenticos -- agenticos-mcp
+           codex mcp add --env AGENTICOS_HOME="$AGENTICOS_HOME" agenticos -- agenticos-mcp
 
          Cursor (~/.cursor/mcp.json)
            {
              "mcpServers": {
                "agenticos": {
                  "command": "agenticos-mcp",
-                 "args": []
-               }
-             }
-           }
+                 "args": [],
+                 "env": {
+                   "AGENTICOS_HOME": "/absolute/path/to/your/AgenticOS-workspace"
+                 }
+                }
+              }
+            }
 
          Gemini CLI
-           gemini mcp add -s user agenticos agenticos-mcp
+           gemini mcp add -s user -e AGENTICOS_HOME="$AGENTICOS_HOME" agenticos agenticos-mcp
 
       3. Restart the AI tool.
 
@@ -72,13 +84,13 @@ class Agenticos < Formula
          Claude Code
            claude mcp get agenticos
            claude mcp remove agenticos -s user
-           claude mcp add --transport stdio --scope user agenticos -- agenticos-mcp
+           claude mcp add --transport stdio --scope user -e AGENTICOS_HOME="$AGENTICOS_HOME" agenticos -- agenticos-mcp
 
          Codex
            codex mcp list
            codex mcp get agenticos
            codex mcp remove agenticos
-           codex mcp add agenticos -- agenticos-mcp
+           codex mcp add --env AGENTICOS_HOME="$AGENTICOS_HOME" agenticos -- agenticos-mcp
 
       6. Product policy: Homebrew is reminder-only today.
          It does not mutate user agent configs by default.

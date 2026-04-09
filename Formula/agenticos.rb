@@ -1,17 +1,17 @@
 require "language/node"
 
 class Agenticos < Formula
-  desc "AI-native project management MCP server for Claude Code, Codex, Cursor, and Gemini CLI"
+  desc "AI-native project management MCP server for coding agents"
   homepage "https://github.com/madlouse/AgenticOS"
   url "https://github.com/madlouse/AgenticOS/releases/download/v0.4.2/agenticos-mcp.tgz"
+  version "0.4.2"
   sha256 "9ccc0051cbf11ec4731d57c3765cb548e092a344520bc733e89d149a7ad27cc8"
   license "MIT"
-  version "0.4.2"
 
   depends_on "node"
 
   def install
-    system "npm", "install", *Language::Node.std_npm_install_args(libexec)
+    system "npm", "install", *std_npm_args
     bin.install_symlink Dir["#{libexec}/bin/*"]
   end
 

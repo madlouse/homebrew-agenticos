@@ -3,9 +3,9 @@ require "language/node"
 class Agenticos < Formula
   desc "AI-native project management MCP server for coding agents"
   homepage "https://github.com/madlouse/AgenticOS"
-  url "https://github.com/madlouse/AgenticOS/releases/download/v0.4.7/agenticos-mcp-0.4.7.tgz"
-  version "0.4.7"
-  sha256 "64120a1cf136cc4824458679f60e0ae15c193d34443fbe3536af040c0f7d5a9d"
+  url "https://github.com/madlouse/AgenticOS/releases/download/v0.4.8/agenticos-mcp-0.4.8.tgz"
+  version "0.4.8"
+  sha256 "b9e2e9a46f7d544ae5371c814d551cd15e864ebbb4a551e6e496d4164f16aa00"
   license "MIT"
 
   depends_on "node"

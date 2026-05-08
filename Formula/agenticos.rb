@@ -3,9 +3,8 @@ require "language/node"
 class Agenticos < Formula
   desc "AI-native project management MCP server for coding agents"
   homepage "https://github.com/madlouse/AgenticOS"
-  url "https://github.com/madlouse/AgenticOS/releases/download/v0.4.11/agenticos-mcp-0.4.11.tgz"
-  version "0.4.11"  # updated tarball
-sha256 "971d7db4b0dd0dd31f3167c903a762720ab46bb8e989795a23a08b98c23cf419"
+  url "https://github.com/madlouse/AgenticOS/releases/download/v0.4.12/agenticos-mcp.tgz"
+  sha256 "de206a9956d50ee964238dfe87f553adfae2c0609db6f6461ba3907f52d68603"
   license "MIT"
 
   depends_on "node"
@@ -23,7 +22,7 @@ sha256 "971d7db4b0dd0dd31f3167c903a762720ab46bb8e989795a23a08b98c23cf419"
            export AGENTICOS_HOME="/Users/jeking/dev/AgenticOS"
 
       2. Bootstrap:
-           agenticos-bootstrap --workspace "#{ENV["HOME"]}/dev/AgenticOS" --first-run
+           agenticos-bootstrap --workspace "#{Dir.home}/dev/AgenticOS" --first-run
 
       3. Register with Claude Code:
            claude mcp add --transport stdio --scope user -e AGENTICOS_HOME="$AGENTICOS_HOME" agenticos -- agenticos-mcp

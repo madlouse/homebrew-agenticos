@@ -5,7 +5,7 @@ class Agenticos < Formula
   homepage "https://github.com/madlouse/AgenticOS"
   url "https://github.com/madlouse/AgenticOS/releases/download/v0.4.22/agenticos-mcp.tgz"
   version "0.4.22"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  sha256 "9a76a5ecf3a9918997d30272dad047259808b509c49dd919e5e6951c6bb8e121"
   license "MIT"
 
   depends_on "node"

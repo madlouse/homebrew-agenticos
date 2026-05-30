@@ -3,9 +3,9 @@ require "language/node"
 class Agenticos < Formula
   desc "AI-native project management MCP server for coding agents"
   homepage "https://github.com/madlouse/AgenticOS"
-  url "https://github.com/madlouse/AgenticOS/releases/download/v0.4.32/agenticos-mcp.tgz"
-  version "0.4.32"
-  sha256 "0cb5d18e45c3f716c1dcee3c0131f43f53079415af151a6cfe987ffc6a47c0ea"
+  url "https://github.com/madlouse/AgenticOS/releases/download/v0.4.33/agenticos-mcp.tgz"
+  version "0.4.33"
+  sha256 "8c7b4520f534fdd8aad6b64362be3472d8e95e27dfe1d4430bcd8a485c94893e"
   license "MIT"
 
   depends_on "node"
@@ -74,7 +74,7 @@ class Agenticos < Formula
            files are not overwritten unless you rerun with --force-skills.
 
          Claude Code
-           claude mcp add --transport stdio --scope user -e AGENTICOS_HOME="$AGENTICOS_HOME" agenticos -- agenticos-mcp
+           claude mcp add agenticos -s user -e AGENTICOS_HOME="$AGENTICOS_HOME" -- agenticos-mcp
 
          Codex
            codex mcp add --env AGENTICOS_HOME="$AGENTICOS_HOME" agenticos -- agenticos-mcp
@@ -110,7 +110,7 @@ class Agenticos < Formula
          Claude Code
            claude mcp get agenticos
            claude mcp remove agenticos -s user
-           claude mcp add --transport stdio --scope user -e AGENTICOS_HOME="$AGENTICOS_HOME" agenticos -- agenticos-mcp
+           claude mcp add agenticos -s user -e AGENTICOS_HOME="$AGENTICOS_HOME" -- agenticos-mcp
 
          Codex
            codex mcp list

@@ -3,9 +3,9 @@ require "language/node"
 class Agenticos < Formula
   desc "AI-native project management MCP server for coding agents"
   homepage "https://github.com/madlouse/AgenticOS"
-  url "https://github.com/madlouse/AgenticOS/releases/download/v0.4.34/agenticos-mcp.tgz"
-  version "0.4.34"
-  sha256 "bfec115c34240f57a20aa85c6670dd2a7a49b2129499af49dc980a49082f37b3"
+  url "https://github.com/madlouse/AgenticOS/releases/download/v0.4.35/agenticos-mcp.tgz"
+  version "0.4.35"
+  sha256 "47dc84b8298fb1bfaa165fcb1f7c2d44fef5d240c8b0ae40ee855a5c6aace4f6"
   license "MIT"
 
   depends_on "node"
@@ -27,7 +27,7 @@ class Agenticos < Formula
     ohai "First-run mode installs AgenticOS activation Skills for Codex, Claude Code, Cursor, Gemini CLI, and Hermes Agent when selected."
     ohai "On macOS, first-run mode also enables launchctl persistence for GUI/session inheritance."
     ohai "To audit the current Homebrew/runtime bootstrap state without changes, use: agenticos-config --validate"
-    ohai "Then run: agenticos-bootstrap --workspace \"#{var}/agenticos\" --all --install-skills --verify"
+    ohai "Then run: agenticos-bootstrap --workspace \"#{var}/agenticos\" --all --install-skills --auto-configure-hooks --verify"
     ohai "Or bootstrap your agent manually (see caveats below) and restart the tool."
   end
 
@@ -99,7 +99,7 @@ class Agenticos < Formula
 
       4. Verify the Homebrew/runtime bootstrap state:
            agenticos-config --validate
-           agenticos-bootstrap --workspace "$AGENTICOS_HOME" --all --install-skills --verify
+           agenticos-bootstrap --workspace "$AGENTICOS_HOME" --all --install-skills --auto-configure-hooks --verify
 
          Then confirm the server is listed in the tool's MCP diagnostics and explicitly call
          agenticos_list.

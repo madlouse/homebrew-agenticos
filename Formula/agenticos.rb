@@ -4,9 +4,9 @@ require "json"
 class Agenticos < Formula
   desc "AI-native project management MCP server for coding agents"
   homepage "https://github.com/madlouse/AgenticOS"
-  url "https://github.com/madlouse/homebrew-agenticos/releases/download/v0.6.2/agenticos-mcp-0.6.2.tgz"
-  version "0.6.2"
-  sha256 "545d609eb18cc4e3ae7868e86aa0a5457e87efd9e4437a833cdd0c5b428f5a5d"
+  url "https://github.com/madlouse/homebrew-agenticos/releases/download/v0.6.3/agenticos-mcp-0.6.3.tgz"
+  version "0.6.3"
+  sha256 "a38012734073bbf806033ea0aed0552c0928b5fc82724892f3896b4c4b764982"
   license "MIT"
 
   depends_on "node"
